@@ -1,0 +1,25 @@
+{
+  "data": "data/cleveland.csv",
+  "n_rows": 297,
+  "n_features": 13,
+  "accuracy": 0.8666666666666667,
+  "macro_avg": {
+    "precision": 0.8687782805429864,
+    "recall": 0.8638392857142857,
+    "f1-score": 0.8653198653198653,
+    "support": 60.0
+  },
+  "class_0": {
+    "precision": 0.8529411764705882,
+    "recall": 0.90625,
+    "f1-score": 0.8787878787878788,
+    "support": 32.0
+  },
+  "class_1": {
+    "precision": 0.8846153846153846,
+    "recall": 0.8214285714285714,
+    "f1-score": 0.8518518518518519,
+    "support": 28.0
+  },
+  "shap_expected_value": -0.20008301734924316
+}
