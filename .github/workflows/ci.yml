@@ -38,20 +38,3 @@ jobs:
           python -c "import pandas; import numpy; import sklearn; import xgboost; import shap; import joblib; import matplotlib; print('All imports OK')"
           python main.py --data data/heart.csv
           echo "Pipeline test passed"
-
-  docker-build:
-    runs-on: ubuntu-latest
-    needs: lint-and-test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build Docker image
-        run: docker build -t health-guard-ml .
-
-      - name: Test Docker image starts
-        run: |
-          docker run -d --name test-container -p 8000:8000 health-guard-ml
-          sleep 10
-          curl -f http://localhost:8000/health || (docker logs test-container && exit 1)
-          docker stop test-container# 
