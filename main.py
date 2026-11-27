@@ -26,7 +26,7 @@ import xgboost as xgb
 from sklearn.calibration import CalibrationDisplay
 from sklearn.metrics import (
     classification_report,
-    confusion_matrix,
+
     f1_score,
     precision_score,
     recall_score,
@@ -138,7 +138,6 @@ def cross_validate(data_path, out_dir):
     fold_metrics = []
     fold = 0
     for train_idx, test_idx in cv.split(X, y):
-        fold += 1
         X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
         y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
 
