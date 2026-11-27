@@ -24,11 +24,14 @@ jobs:
           pip install -r requirements.txt
           pip install ruff pytest pytest-asyncio httpx
 
-      - name: Lint with ruff
-        run: ruff check .
+      - name: Auto-fix lint with ruff
+        run: ruff check --fix .
 
-      - name: Format check with ruff
-        run: ruff format --check .
+      - name: Auto-format with ruff
+        run: ruff format .
+
+      - name: Verify no lint errors remain
+        run: ruff check .
 
       - name: Quick pipeline test
         run: |
@@ -51,4 +54,4 @@ jobs:
           docker run -d --name test-container -p 8000:8000 health-guard-ml
           sleep 10
           curl -f http://localhost:8000/health || (docker logs test-container && exit 1)
-          docker stop test-container
+          docker stop test-container# 
