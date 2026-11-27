@@ -1,6 +1,12 @@
 # Health Guard ML
 
-Predicts heart disease risk from clinical data using XGBoost. But the real point is SHAP — understanding *why* each prediction was made, not just getting an accuracy number.
+[![CI](https://img.shields.io/github/actions/workflow/status/Praansu/health-guard-ml/ci.yml?style=flat-square)](https://github.com/Praansu/health-guard-ml/actions)
+[![License](https://img.shields.io/badge/License-MIT-1F2328?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.11+-1F2328?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![XGBoost](https://img.shields.io/badge/XGBoost-2.0+-1F2328?style=flat-square)](https://xgboost.readthedocs.io)
+[![SHAP](https://img.shields.io/badge/SHAP-explainable-1F2328?style=flat-square)](https://shap.readthedocs.io)
+
+Predicts heart disease risk from clinical data using XGBoost. But the real point is **SHAP** — understanding *why* each prediction was made, not just getting an accuracy number.
 
 Would you trust a model that says "70% heart disease risk" without explaining why? In healthcare, interpretability isn't optional. That's what this project is about.
 
@@ -75,7 +81,7 @@ The single 80/20 split reported 0.87 accuracy — cross-validation gives a more 
 
 ## Tech stack
 
-Python, pandas, XGBoost, scikit-learn, SHAP, matplotlib. CI lints with flake8.
+Python, pandas, XGBoost, scikit-learn, SHAP, matplotlib. CI lints with **ruff**.
 
 ## Limitations — read before citing any number from this repo
 
